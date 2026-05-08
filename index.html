@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Currículo</h1>
+    <form action="" method="post">
+        <div class="lado-a-lado">
+            <div id="rosto">
+                <img src="istockphoto-178849467-170x170.jpg" alt="">
+                <br>
+                <input type="file" name="" id="">
+            </div>
+            <div>
+                <div class="lado-a-lado">
+                    <div id="nome">
+                        <label for="nome">NOME:</label>
+                        <br>
+                        <input type="text" name="nome" id="">
+                    </div>
+                    <div id="sobrenome">
+                        <label for="sobrenome">SOBRENOME:</label>
+                        <br>
+                        <input type="text" name="sobrenome" id="">
+                    </div>
+                </div>
+                <br>
+                <div id="endereco">
+                    <label for="endereço">ENDEREÇO:</label>
+                    <br>
+                    <input type="text" name="endereço" id="">
+                </div>
+            </div>
+        </div>
+        <div id="regiao" class="lado-a-lado">
+                <br>
+                <div class="regiao-div">
+                    <label for="nome">CIDADE:</label>
+                    <br>
+                    <input type="text" name="Nome" id="" class="regiao-input">
+                </div>
+                <br>
+                <div class="regiao-div">
+                    <label for="nome">ESTADO:</label>
+                    <br>
+                    <input type="text" name="Nome" id="" class="regiao-input">
+                </div>
+                <br>
+                <div class="regiao-div">
+                    <label for="nome">CEP:</label>
+                    <br>
+                    <input type="text" name="Nome" id="" class="regiao-input">
+                </div>
+        </div>
+        <br>
+        <div class="lado-a-lado">
+            <div>
+                <label for="telefone">TELEFONE:</label>
+                <br>
+                <input type="text" name="telefone" id="telefone" pattern="(?[1-9]{2}\)?\s?[0-9]{4,5}-?[0-9]{4}$">
+            </div>
+            <br>
+            <div>
+                <label for="email">EMAIL:</label>
+                <br>
+                <input type="email" name="email" id="">
+            </div>
+        </div>
+        <br>
+        <div class="lado-a-lado">
+            <button>Voltar</button>
+            <button>Criar Currículo</button>
+        </div>
+    </form>
+    <script>
+        const telefoneInput = document.getElementById('telefone');
+
+        telefoneInput.addEventListener('keypress', (e) => {
+            // Permite apenas números
+            if (isNaN(e.key)) {
+                e.preventDefault();
+            }
+        });
+
+        telefoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é número
+            value = value.replace(/^(\d{2})(\d)/g, '($1) $2'); // Coloca parênteses no DDD
+            value = value.replace(/(\d)(\d{4})$/, '$1-$2'); // Coloca hífen no número
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+.lado-a-lado{
+    display: flex;
+}
+#nome{
+    margin-right: 20px;
+}
+#endereco input{
+    
+}
+#regiao{
+    width: 100%;
+}
+#regiao .regiao-div{
+    margin-right: 20px;
+}
+#regiao .regiao-input{
+    width: auto;
+}
+#rosto{
+    display: inline-block;
+}
+#rosto img{
+    width: 30%;
+    height: auto;
+}
