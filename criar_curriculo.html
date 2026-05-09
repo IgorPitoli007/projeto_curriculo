@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar currículo</title>
-    <link rel="stylesheet" href="/css/criar_curriculo.css">
+    <link rel="stylesheet" href="./css/criar_curriculo.css">
 </head>
 <body>
     <h1>Criar currículo</h1>
@@ -50,24 +50,24 @@
                     <input type="text" name="Nome" id="" class="regiao-input">
                 </div>
                 <br>
-                <div class="regiao-div">
+                <div id="cep">
                     <label for="nome">CEP:</label>
                     <br>
-                    <input type="text" name="Nome" id="" class="regiao-input">
+                    <input type="text" name="Nome" id="cep" class="regiao-input">
                 </div>
         </div>
         <br>
-        <div class="lado-a-lado">
-            <div>
+        <div id="contato" class="lado-a-lado">
+            <div class="contato-div">
                 <label for="telefone">TELEFONE:</label>
                 <br>
-                <input type="text" name="telefone" id="telefone" pattern="(?[1-9]{2}\)?\s?[0-9]{4,5}-?[0-9]{4}$">
+                <input type="text" id="telefone" name="telefone" class="contato-input" pattern="(?[1-9]{2}\)?\s?[0-9]{4,5}-?[0-9]{4}$">
             </div>
             <br>
             <div>
                 <label for="email">EMAIL:</label>
                 <br>
-                <input type="email" name="email" id="">
+                <input type="email" id="email" name="email" class="contato-input">
             </div>
         </div>
         <br>
