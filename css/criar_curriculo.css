@@ -11,13 +11,10 @@ input{
 #nome{
     margin-right: 20px;
 }
-<<<<<<< HEAD
-=======
 #endereco input{
     width: 100%;
     box-sizing: border-box;
 }
->>>>>>> 975d34bc057581a861a088b61e304140219385d0
 #regiao{
     width: 100%;
 }
