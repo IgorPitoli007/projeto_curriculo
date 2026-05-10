@@ -1,9 +1,23 @@
 .lado-a-lado{
     display: flex;
 }
+div{
+    width: 100%;
+}
+input{
+    width: 100%;
+    box-sizing: border-box;
+}
 #nome{
     margin-right: 20px;
 }
+<<<<<<< HEAD
+=======
+#endereco input{
+    width: 100%;
+    box-sizing: border-box;
+}
+>>>>>>> 975d34bc057581a861a088b61e304140219385d0
 #regiao{
     width: 100%;
 }
@@ -11,9 +25,19 @@
     margin-right: 20px;
 }
 #regiao .regiao-input{
-    width: auto;
+    width: 100%;
+}
+#contato{
+    width: 100%;
+}
+#contato .contato-div{
+    margin-right: 20px;
+}
+#contato .contato-input{
+    width: 100%;
 }
 #rosto{
+    width: auto;
     display: inline-block;
 }
 #rosto img{
@@ -21,5 +45,12 @@
     height: auto;
 }
 #telefone{
-    margin-right: 20px;
+    width: auto;
+}
+
+#email{
+    width: auto;
+}
+#cep{
+    margin: 0;
 }
