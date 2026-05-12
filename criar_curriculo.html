@@ -7,75 +7,91 @@
     <link rel="stylesheet" href="./css/criar_curriculo.css">
 </head>
 <body>
-    <h1>Criar currículo</h1>
-    <form action="" method="post">
-        <div class="lado-a-lado">
-            <div id="rosto">
-                <img src="./img/istockphoto-178849467-170x170.jpg" alt="">
-                <br>
-                <input type="file" name="" id="">
-            </div>
-            <div>
+    <div class="lado-a-lado">
+        <div id="currículo">
+            <h1 id="nome_curriculo"></h1>
+        </div>
+        <div id="form">
+            <h1 class="centralizar">Criar currículo</h1>
+            <form action="" method="post">
                 <div class="lado-a-lado">
-                    <div id="nome">
-                        <label for="nome">NOME:</label>
-                        <br>
-                        <input type="text" name="nome" id="">
-                    </div>
-                    <div id="sobrenome">
-                        <label for="sobrenome">SOBRENOME:</label>
-                        <br>
-                        <input type="text" name="sobrenome" id="">
-                    </div>
-                </div>
-                <br>
-                <div id="endereco">
-                    <label for="endereço">ENDEREÇO:</label>
+                <div id="rosto">
+                    <img src="./img/istockphoto-178849467-170x170.jpg" alt="">
                     <br>
-                    <input type="text" name="endereço" id="">
+                    <input type="file" name="" id="">
+                </div>
+                <div>
+                    <div class="lado-a-lado">
+                        <div id="nome">
+                            <label for="nome">NOME:</label>
+                            <br>
+                            <input type="text" name="nome" id="nome">
+                        </div>
+                        <div id="sobrenome">
+                            <label for="sobrenome">SOBRENOME:</label>
+                            <br>
+                            <input type="text" name="sobrenome" id="">
+                        </div>
+                    </div>
+                    <br>
+                    <div id="endereco">
+                        <label for="endereço">ENDEREÇO:</label>
+                        <br>
+                        <input type="text" name="endereço" id="">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="regiao" class="lado-a-lado">
-                <br>
-                <div class="regiao-div">
-                    <label for="nome">CIDADE:</label>
+            <div id="regiao" class="lado-a-lado">
                     <br>
-                    <input type="text" name="Nome" id="" class="regiao-input">
-                </div>
-                <br>
-                <div class="regiao-div">
-                    <label for="nome">ESTADO:</label>
+                    <div class="regiao-div">
+                        <label for="nome">CIDADE:</label>
+                        <br>
+                        <input type="text" name="Nome" id="" class="regiao-input">
+                    </div>
                     <br>
-                    <input type="text" name="Nome" id="" class="regiao-input">
-                </div>
-                <br>
-                <div id="cep">
-                    <label for="nome">CEP:</label>
+                    <div class="regiao-div">
+                        <label for="nome">ESTADO:</label>
+                        <br>
+                        <input type="text" name="Nome" id="" class="regiao-input">
+                    </div>
                     <br>
-                    <input type="text" name="Nome" id="cep" class="regiao-input">
-                </div>
-        </div>
-        <br>
-        <div id="contato" class="lado-a-lado">
-            <div class="contato-div">
-                <label for="telefone">TELEFONE:</label>
-                <br>
-                <input type="text" id="telefone" name="telefone" class="contato-input" pattern="(?[1-9]{2}\)?\s?[0-9]{4,5}-?[0-9]{4}$">
+                    <div id="cep">
+                        <label for="nome">CEP:</label>
+                        <br>
+                        <input type="text" name="Nome" id="cep" class="regiao-input">
+                    </div>
             </div>
             <br>
-            <div>
-                <label for="email">EMAIL:</label>
+            <div id="contato" class="lado-a-lado">
+                <div class="contato-div">
+                    <label for="telefone">TELEFONE:</label>
+                    <br>
+                    <input type="text" id="telefone" name="telefone" class="contato-input" pattern="(?[1-9]{2}\)?\s?[0-9]{4,5}-?[0-9]{4}$">
+                </div>
                 <br>
-                <input type="email" id="email" name="email" class="contato-input">
+                <div>
+                    <label for="email">EMAIL:</label>
+                    <br>
+                    <input type="email" id="email" name="email" class="contato-input">
+                </div>
             </div>
+            <br>
+            <div class="lado-a-lado">
+                <button>Voltar</button>
+                <button>Criar Currículo</button>
+            </div>
+            </form>
         </div>
-        <br>
-        <div class="lado-a-lado">
-            <button>Voltar</button>
-            <button>Criar Currículo</button>
-        </div>
-    </form>
+    </div>
+    <script>
+        const nomeInput = document.getElementById('nome');
+        const nomeCurriculo = document.getElementById('nome_curriculo');
+
+        nomeInput.addEventListener('input', (e) => {
+           nomeCurriculo.textContent = event.target.value;
+        });
+
+    </script>
     <script>
         const telefoneInput = document.getElementById('telefone');
 
