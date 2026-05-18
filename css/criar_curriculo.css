@@ -1,3 +1,18 @@
+*{
+    margin: 0;
+}
+nav{
+    background-color: aquamarine;
+    padding: 10px;
+}
+a{
+    color: #002b6f;
+    text-decoration: none;
+    margin-left: 10px;
+}
+a:hover{
+    text-decoration: underline;
+}
 .lado-a-lado{
     display: flex;
 }
