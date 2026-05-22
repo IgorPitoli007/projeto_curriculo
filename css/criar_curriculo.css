@@ -29,7 +29,6 @@ nav a:hover{
 }
 .lado-a-lado{
     display: flex;
-    gap: 25px;
 }
 .centralizar{
     text-align: center;
@@ -51,6 +50,7 @@ nav a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 25px;
 }
 #rosto img{
     width: 170px;
@@ -91,12 +91,14 @@ input:focus{
 }
 .regiao-div{
     flex: 1;
+    margin-right: 25px;
 }
 .regiao-input{
     width: 100%;
 }
 .contato-div{
     flex: 1;
+    margin-right: 25px;
 }
 .contato-input{
     width: 100%;
@@ -151,6 +153,7 @@ button:hover{
 }
 .botao{
     padding: 14px 28px;
+    margin-right: 25px;
     border-radius: 12px;
     background: #1e3a5f;
     color: white;
@@ -166,4 +169,14 @@ button:hover{
 .botao:hover{
     background: #295284;
     transform: translateY(-2px);
+}
+#dados_pessoas-div{
+    width: 100%;
+}
+#nome{
+    width: 100%;
+    margin-right: 25px;
+}
+#sobrenome{
+    width: 100%;
 }
