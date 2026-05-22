@@ -1,72 +1,151 @@
 *{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: #f4f7fb;
+    color: #333;
+    min-height: 100vh;
 }
 nav{
-    background-color: aquamarine;
-    padding: 10px;
+    width: 100%;
+    background: #1e3a5f;
+    padding: 18px 40px;
+    display: flex;
+    gap: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-a{
-    color: #002b6f;
+nav a{
+    color: white;
     text-decoration: none;
-    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
 }
-a:hover{
-    text-decoration: underline;
+nav a:hover{
+    color: #8ec5ff;
 }
 .lado-a-lado{
     display: flex;
+    gap: 25px;
 }
 .centralizar{
     text-align: center;
+}
+#form{
+    width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+#form h1{
+    margin-bottom: 35px;
+    color: #1e3a5f;
+    font-size: 34px;
+}
+#rosto{
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
-div{
-    width: 100%;
+#rosto img{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #1e3a5f;
+    margin-bottom: 15px;
+}
+#rosto input{
+    width: 180px;
+}
+label{
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
 }
 input{
     width: 100%;
-    box-sizing: border-box;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border: 2px solid #d6dce5;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 15px;
 }
-#nome{
-    margin-right: 20px;
+input:focus{
+    border-color: #1e3a5f;
+    box-shadow: 0 0 8px rgba(30,58,95,0.2);
 }
-#endereco input{
-    width: 100%;
-    box-sizing: border-box;
+#nome,
+#sobrenome{
+    width: 260px;
 }
-#regiao{
-    width: 100%;
+#endereco{
+    margin-top: 15px;
 }
-#regiao .regiao-div{
-    margin-right: 20px;
+.regiao-div{
+    flex: 1;
 }
-#regiao .regiao-input{
-    width: 100%;
-}
-#contato{
-    width: 100%;
-}
-#contato .contato-div{
-    margin-right: 20px;
-}
-#contato .contato-input{
+.regiao-input{
     width: 100%;
 }
-#rosto{
-    width: auto;
-    display: inline-block;
+.contato-div{
+    flex: 1;
 }
-#rosto img{
-    width: 30%;
-    height: auto;
+.contato-input{
+    width: 100%;
 }
-#telefone{
-    width: auto;
+.botoes{
+    justify-content: center;
+    margin-top: 30px;
+}
+button{
+    padding: 14px 28px;
+    border: none;
+    border-radius: 12px;
+    background: #1e3a5f;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover{
+    background: #295284;
+    transform: translateY(-2px);
+}
+#curriculo{
+    width: 350px;
+    min-height: 500px;
+    background: white;
+    margin-top: 40px;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
-#email{
-    width: auto;
+#nome_curriculo{
+    color: #1e3a5f;
+    font-size: 32px;
 }
-#cep{
-    margin: 0;
+@media(max-width: 950px){
+    .lado-a-lado{
+        flex-direction: column;
+    }
+    #form{
+        width: 95%;
+        padding: 25px;
+    }
+    #nome, #sobrenome{
+        width: 100%;
+    }
+    nav{
+        justify-content: center;
+    }
 }
