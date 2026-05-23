@@ -53,12 +53,11 @@ nav a:hover{
     margin-right: 25px;
 }
 #rosto img{
-    width: 170px;
-    height: 170px;
+    width: 135px;
+    height: auto;
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid #1e3a5f;
-    margin-bottom: 15px;
 }
 #rosto input{
     width: 180px;
@@ -171,6 +170,7 @@ button:hover{
     transform: translateY(-2px);
 }
 #dados_pessoas-div{
+    margin-top: 10px;
     width: 100%;
 }
 #nome{
@@ -179,4 +179,22 @@ button:hover{
 }
 #sobrenome{
     width: 100%;
+}
+#foto{
+    border: 0;
+    margin-top: 0;
+    display: none;
+}
+#foto-button{
+    color: #ffffff;
+    background-color: #1e3a5f;
+    border: #1e3a5f, 1px, solid;
+    padding: 5px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    user-select: none;
+}
+#foto-button:hover{
+    background: #295284;
+    transform: translateY(-2px);
 }
