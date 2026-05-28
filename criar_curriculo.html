@@ -13,99 +13,106 @@
     </nav>
 
     <div class="lado-a-lado">
-        <div id="form">
-            <h1 class="centralizar">Criar currículo</h1>
-
-            <form action="index.html" method="">
+            <div id="curriculo">
                 <div class="lado-a-lado">
+                    <p id="nome-curriculo"></p>
+                    <p class="esconder">-</p>
+                    <p id="sobrenome-curriculo"></p>
+                </div>
+            </div>
+            <div id="form">
+                <h1 class="centralizar">Criar currículo</h1>
 
-                    <div id="rosto">
-                        <img src="./img/istockphoto-178849467-170x170.jpg" alt="">
-                        <br>
+                <form action="index.html" method="">
+                    <div class="lado-a-lado">
 
-                        <label for="foto" id="foto-button">Escolha a foto.</label>
-                        <input type="file" name="foto" id="foto">
-                    </div>
-
-                    <div id="dados_pessoas-div">
-
-                        <div class="lado-a-lado">
-                            <div id="nome">
-                                <label for="nome">NOME:</label>
-                                <br>
-                                <input type="text" name="nome" id="nome" required>
-                            </div>
-
-                            <div id="sobrenome">
-                                <label for="sobrenome">SOBRENOME:</label>
-                                <br>
-                                <input type="text" name="sobrenome" id="" required>
-                            </div>
-                        </div>
-
-                        <br>
-
-                        <div id="endereco">
-                            <label for="endereço">ENDEREÇO:</label>
+                        <div id="rosto">
+                            <img src="./img/istockphoto-178849467-170x170.jpg" alt="">
                             <br>
-                            <input type="text" name="endereço" id="" required>
+
+                            <label for="foto" id="foto-button">Escolha a foto.</label>
+                            <input type="file" name="foto" id="foto">
                         </div>
 
-                    </div>
-                </div>
+                        <div id="dados_pessoas-div">
 
-                <div id="regiao" class="lado-a-lado">
+                            <div class="lado-a-lado">
+                                <div id="nome">
+                                    <label for="nome">NOME:</label>
+                                    <br>
+                                    <input type="text" name="nome" id="nome-input" required>
+                                </div>
+
+                                <div id="sobrenome">
+                                    <label for="sobrenome">SOBRENOME:</label>
+                                    <br>
+                                    <input type="text" name="sobrenome" id="sobrenome-input" required>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div id="endereco">
+                                <label for="endereço">ENDEREÇO:</label>
+                                <br>
+                                <input type="text" name="endereço" id="" required>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="regiao" class="lado-a-lado">
+                        <br>
+
+                        <div class="regiao-div">
+                            <label for="nome">CIDADE:</label>
+                            <br>
+                            <input type="text" name="Nome" id="" class="regiao-input" required>
+                        </div>
+
+                        <br>
+
+                        <div class="regiao-div">
+                            <label for="nome">ESTADO:</label>
+                            <br>
+                            <input type="text" name="Nome" id="" class="regiao-input" required>
+                        </div>
+
+                        <br>
+
+                        <div id="cep">
+                            <label for="nome">CEP:</label>
+                            <br>
+                            <input type="text" name="Nome" id="cep" class="regiao-input" required>
+                        </div>
+                    </div>
+
                     <br>
 
-                    <div class="regiao-div">
-                        <label for="nome">CIDADE:</label>
-                        <br>
-                        <input type="text" name="Nome" id="" class="regiao-input" required>
-                    </div>
+                    <div id="contato" class="lado-a-lado">
 
+                        <div class="contato-div">
+                            <label for="telefone">TELEFONE:</label>
+                            <br>
+                            <input type="text" id="telefone" name="telefone" class="contato-input" pattern="^\(?[1-9]{2}\)?\s?[0-9]{5}-?[0-9]{4}$" maxlength="15" required>
+                        </div>
+
+                        <br>
+
+                        <div>
+                            <label for="email">EMAIL:</label>
+                            <br>
+                            <input type="email" id="email" name="email" class="contato-input" required>
+                        </div>
+                    </div>
                     <br>
-
-                    <div class="regiao-div">
-                        <label for="nome">ESTADO:</label>
-                        <br>
-                        <input type="text" name="Nome" id="" class="regiao-input" required>
+                    <div class="lado-a-lado botoes">
+                        <a href="index.html" class="botao">Voltar</a>
+                        <button type="submit">Criar Currículo</button>
                     </div>
 
-                    <br>
-
-                    <div id="cep">
-                        <label for="nome">CEP:</label>
-                        <br>
-                        <input type="text" name="Nome" id="cep" class="regiao-input" required>
-                    </div>
-                </div>
-
-                <br>
-
-                <div id="contato" class="lado-a-lado">
-
-                    <div class="contato-div">
-                        <label for="telefone">TELEFONE:</label>
-                        <br>
-                        <input type="text" id="telefone" name="telefone" class="contato-input" pattern="^\(?[1-9]{2}\)?\s?[0-9]{5}-?[0-9]{4}$" maxlength="15" required>
-                    </div>
-
-                    <br>
-
-                    <div>
-                        <label for="email">EMAIL:</label>
-                        <br>
-                        <input type="email" id="email" name="email" class="contato-input" required>
-                    </div>
-                </div>
-                <br>
-                <div class="lado-a-lado botoes">
-                    <a href="index.html" class="botao">Voltar</a>
-                    <button type="submit">Criar Currículo</button>
-                </div>
-
-            </form>
-        </div>
+                </form>
+            </div>
     </div>
 
     <footer>
@@ -129,6 +136,18 @@
             e.target.value = value;
         });
     </script>
-
+    <script>
+        const nomeInput = document.getElementById("nome-input");
+        const nomeCurriculo = document.getElementById("nome-curriculo");
+        const sobrenomeInput = document.getElementById("sobrenome-input");
+        const sobrenomeCurriculo = document.getElementById("sobrenome-curriculo");
+        
+        nomeInput.addEventListener('input', () => {
+            nomeCurriculo.textContent = nomeInput.value;
+        })
+        sobrenomeInput.addEventListener('input', () => {
+            sobrenomeCurriculo.textContent = sobrenomeInput.value;
+        })
+    </script>
 </body>
 </html>

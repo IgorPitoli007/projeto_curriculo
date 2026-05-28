@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
 }
 body{
     background: #f4f7fb;
@@ -122,18 +123,14 @@ button:hover{
     transform: translateY(-2px);
 }
 #curriculo{
-    width: 350px;
-    min-height: 500px;
+    height: auto;
+    width: 70.7070vh;
+    aspect-ratio: 1 / 1.4142;
     background: white;
-    margin-top: 40px;
+    margin: 40px;
     border-radius: 18px;
     padding: 30px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
-
-#nome_curriculo{
-    color: #1e3a5f;
-    font-size: 32px;
 }
 @media(max-width: 950px){
     .lado-a-lado{
@@ -220,4 +217,7 @@ footer p:first-child{
 
 footer p:last-child{
     color: #d6e4f0;
+}
+.esconder{
+    visibility: hidden;
 }
