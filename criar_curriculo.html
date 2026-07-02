@@ -38,11 +38,11 @@
             <div id="form">
                 <h1 class="centralizar">Criar currículo</h1>
 
-                <form action="index.html" method="">
+                <form action="javascript:gerarPdf()" method="">
                     <div class="lado-a-lado">
 
                         <div id="rosto">
-                            <img src="./img/istockphoto-178849467-170x170.jpg" alt="">
+                            <img src="./img/foto_perfil.jpg" alt="">
                             <br>
 
                             <label for="foto" id="foto-button">Escolha a foto.</label>
@@ -125,13 +125,12 @@
                         <a href="index.html" class="botao">Voltar</a>
                         <button type="submit">Criar Currículo</button>
                     </div>
-
                 </form>
             </div>
     </div>
     <footer>
         <p>Projeto desenvolvido para a disciplina de Programação Web Front-end<p>
-        <p>Igor Rafael Pitoli - Ghabriel Jun Aizawa - Eduardo de Souza Oller</p> 
+        <p><a href="">Igor Rafael Pitoli</a> - Ghabriel Jun Aizawa - <a href="https://www.linkedin.com/in/eduardo-de-souza-oller-25468441b/">Eduardo de Souza Oller</a></p> 
     </footer>
     <script>
         const telefoneInput = document.getElementById('telefone');
@@ -150,6 +149,32 @@
             e.target.value = value;
         });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        function gerarPdf(){
+            const foto = document.getElementById('foto-curriculo');
+
+            // Garante que a imagem já terminou de carregar antes de "fotografar" o currículo
+            const gerar = () => {
+                html2pdf(document.getElementById('curriculo'), {
+                    margin: 0,
+                    filename: 'curriculo.pdf',
+                    jsPDF: { format: 'a4' },
+                    html2canvas: {
+                        useCORS: true,
+                        allowTaint: true,
+                        scale: 2 // melhora a qualidade da imagem no PDF
+                    }
+                });
+            };
+
+            if (foto.complete) {
+                gerar();
+            } else {
+                foto.onload = gerar;
+            }
+        }
+    </script>
 </body>
 </html>
