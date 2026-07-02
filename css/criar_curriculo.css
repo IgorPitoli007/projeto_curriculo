@@ -333,3 +333,6 @@ footer p:last-child a:hover{
     max-width: none !important;
     aspect-ratio: auto !important;
 }
+.icones {
+  filter: invert(100%);
+}

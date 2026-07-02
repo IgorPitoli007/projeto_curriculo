@@ -152,3 +152,6 @@ footer p:last-child a:hover{
     margin-top: 12px;
     color: #4b5563;
 }
+.icones {
+  filter: invert(100%);
+}
