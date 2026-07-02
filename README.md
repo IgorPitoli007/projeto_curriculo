@@ -70,5 +70,4 @@ Não é necessário nenhum servidor ou instalação de dependências — o proje
 ## Integrantes
 
 - Igor Rafael Pitoli
-- Ghabriel Jun Aizawa
 - Eduardo de Souza Oller
