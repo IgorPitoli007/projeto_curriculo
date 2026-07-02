@@ -136,7 +136,6 @@
         const telefoneInput = document.getElementById('telefone');
 
         telefoneInput.addEventListener('keypress', (e) => {
-            // Permite apenas números
             if (isNaN(e.key)) {
                 e.preventDefault();
             }
@@ -154,8 +153,6 @@
     <script>
         function gerarPdf(){
             const foto = document.getElementById('foto-curriculo');
-
-            // Garante que a imagem já terminou de carregar antes de "fotografar" o currículo
             const gerar = () => {
                 html2pdf(document.getElementById('curriculo'), {
                     margin: 0,
@@ -164,7 +161,7 @@
                     html2canvas: {
                         useCORS: true,
                         allowTaint: true,
-                        scale: 2 // melhora a qualidade da imagem no PDF
+                        scale: 2
                     }
                 });
             };
