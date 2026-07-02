@@ -45,36 +45,28 @@
             </div>
             <div id="form">
                 <h1 class="centralizar">Criar currículo</h1>
-
                 <form action="javascript:gerarPdf()" method="">
                     <div class="lado-a-lado">
-
                         <div id="rosto">
                             <img src="./img/foto_perfil.jpg" alt="">
                             <br>
-
                             <label for="foto" id="foto-button">Escolha a foto.</label>
                             <input type="file" name="foto" id="foto">
                         </div>
-
                         <div id="dados_pessoas-div">
-
                             <div class="lado-a-lado">
                                 <div id="nome">
                                     <label for="nome">NOME:</label>
                                     <br>
                                     <input type="text" name="nome" id="nome-input" required>
                                 </div>
-
                                 <div id="sobrenome">
                                     <label for="sobrenome">SOBRENOME:</label>
                                     <br>
                                     <input type="text" name="sobrenome" id="sobrenome-input" required>
                                 </div>
                             </div>
-
                             <br>
-
                             <div id="endereco">
                                 <label for="endereco-input">ENDEREÇO:</label>
                                 <br>
@@ -83,7 +75,6 @@
 
                         </div>
                     </div>
-
                     <div id="regiao" class="lado-a-lado">
                         <br>
 
@@ -109,9 +100,7 @@
                             <input type="text" name="cep" id="cep-input" class="regiao-input" required>
                         </div>
                     </div>
-
                     <br>
-
                     <div id="contato" class="lado-a-lado">
 
                         <div class="contato-div">
@@ -133,6 +122,7 @@
                         <label for="objetivo">OBJETIVO:</label>
                         <input type="text" id="objetivo" name="objetivo">
                     </div>
+                    <br>
                     <div id="descricao-div">
                         <label for="descricao">DESCRIÇÃO PROFISSIONAL:</label>
                         <input type="text" id="descricao" name="descricao">
@@ -174,10 +164,8 @@
             const pai = curriculo.parentElement;
 
             pai.style.display = "block";
-            curriculo.style.margin = "0 auto";
             const gerar = () => {
                 curriculo.classList.add('gerando-pdf');
-
                 html2pdf()
                     .set({
                         margin: 0,
@@ -189,7 +177,9 @@
                         html2canvas: {
                             scale: 2,
                             useCORS: true,
-                            allowTaint: true
+                            allowTaint: true,
+                            scrollX: 0,
+                            scrollY: 0
                         },
                         jsPDF: {
                             unit: 'mm',
@@ -201,7 +191,7 @@
                     .save()
                     .then(() => {
                         pai.style.display = "flex";
-                        curriculo.classList.remove('gerando-pdf');
+                        curriculo.classList.remove("gerando-pdf");
                     });
             };
 

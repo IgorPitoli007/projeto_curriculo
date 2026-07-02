@@ -131,8 +131,8 @@ button:hover{
 }
 #curriculo{
     height: auto;
-    max-width: 95%;
-    width: 70.707vh;
+    width: 210mm;
+    min-height: 297mm;
     aspect-ratio: 1 / 1.4142;
     background: white;
     margin: 40px;
@@ -325,8 +325,8 @@ footer p:last-child a:hover{
 }
 #curriculo.gerando-pdf{
     width: 210mm !important;
-    height: 297mm !important;
-    margin: 0 !important;
+    min-height: 297mm !important;
+    margin: 0 auto !important;
     padding: 20mm !important;
     border-radius: 0 !important;
     box-shadow: none !important;
