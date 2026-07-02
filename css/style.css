@@ -10,6 +10,10 @@ body{
     color: #333;
     line-height: 1.5;
 }
+header{
+    width: 100%;
+    margin: 0;
+}
 nav{
     width: 100%;
     background: #1e3a5f;

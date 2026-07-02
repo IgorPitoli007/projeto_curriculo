@@ -8,16 +8,31 @@
 </head>
 <body>
    <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="criar_curriculo.html">📄 Criar currículo</a>
-</nav>
+        <a href="index.html"><img src="./icons/home.ico" alt="" width="24" height="24">  Home</a>
+        <a href="criar_curriculo.html"><img src="./icons/docs.ico" alt="" width="24" height="24">  Criar currículo</a>
+    </nav>
 
     <div class="lado-a-lado">
             <div id="curriculo">
-                <div class="lado-a-lado">
-                    <p id="nome-curriculo"></p>
-                    <p class="esconder">-</p>
-                    <p id="sobrenome-curriculo"></p>
+                <div class="curriculo-topo lado-a-lado">
+                    <img id="foto-curriculo" src="./img/istockphoto-178849467-170x170.jpg" alt="Foto do currículo">
+
+                    <div class="curriculo-titulo">
+                        <div class="lado-a-lado">
+                            <p id="nome-curriculo"></p>
+                            <p id="sobrenome-curriculo"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="curriculo-secao">
+                    <h3>Contato</h3>
+                    <p>Tel: <span id="telefone-curriculo"></span></p>
+                    <p>Email: <span id="email-curriculo"></span></p>
+                    <h3>Endereço</h3>
+                    <p><span id="cidade-curriculo"></span> - <span id="estado-curriculo"></span></p>
+                    <p>CEP: <span id="cep-curriculo"></span></p>
+                    <p><span id="endereco-curriculo"></span></p>
                 </div>
             </div>
             <div id="form">
@@ -53,9 +68,9 @@
                             <br>
 
                             <div id="endereco">
-                                <label for="endereço">ENDEREÇO:</label>
+                                <label for="endereco-input">ENDEREÇO:</label>
                                 <br>
-                                <input type="text" name="endereço" id="" required>
+                                <input type="text" name="endereço" id="endereco-input" required>
                             </div>
 
                         </div>
@@ -65,25 +80,25 @@
                         <br>
 
                         <div class="regiao-div">
-                            <label for="nome">CIDADE:</label>
+                            <label for="cidade-input">CIDADE:</label>
                             <br>
-                            <input type="text" name="Nome" id="" class="regiao-input" required>
+                            <input type="text" name="cidade" id="cidade-input" class="regiao-input" required>
                         </div>
 
                         <br>
 
                         <div class="regiao-div">
-                            <label for="nome">ESTADO:</label>
+                            <label for="estado-input">ESTADO:</label>
                             <br>
-                            <input type="text" name="Nome" id="" class="regiao-input" required>
+                            <input type="text" name="estado" id="estado-input" class="regiao-input" required>
                         </div>
 
                         <br>
 
                         <div id="cep">
-                            <label for="nome">CEP:</label>
+                            <label for="cep-input">CEP:</label>
                             <br>
-                            <input type="text" name="Nome" id="cep" class="regiao-input" required>
+                            <input type="text" name="cep" id="cep-input" class="regiao-input" required>
                         </div>
                     </div>
 
@@ -135,18 +150,6 @@
             e.target.value = value;
         });
     </script>
-    <script>
-        const nomeInput = document.getElementById("nome-input");
-        const nomeCurriculo = document.getElementById("nome-curriculo");
-        const sobrenomeInput = document.getElementById("sobrenome-input");
-        const sobrenomeCurriculo = document.getElementById("sobrenome-curriculo");
-        
-        nomeInput.addEventListener('input', () => {
-            nomeCurriculo.textContent = nomeInput.value;
-        })
-        sobrenomeInput.addEventListener('input', () => {
-            sobrenomeCurriculo.textContent = sobrenomeInput.value;
-        })
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

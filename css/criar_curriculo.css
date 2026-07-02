@@ -12,6 +12,10 @@ body{
     line-height: 1.5;
     word-spacing: 0.16em;
 }
+header{
+    width: 100%;
+    margin: 0;
+}
 nav{
     width: 100%;
     background: #1e3a5f;
@@ -58,7 +62,7 @@ nav a:hover{
 }
 #rosto img{
     width: 135px;
-    height: auto;
+    height: 135px;
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid #1e3a5f;
@@ -231,4 +235,83 @@ footer p:last-child{
 }
 .esconder{
     visibility: hidden;
+}
+#curriculo{
+    height: auto;
+    max-width: 95%;
+    width: 70.707vh;
+    aspect-ratio: 1 / 1.4142;
+    background: white;
+    margin: 40px;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.curriculo-topo{
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#foto-curriculo{
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1e3a5f;
+}
+
+.curriculo-titulo{
+    flex: 1;
+    min-width: 0;
+}
+
+.curriculo-titulo .lado-a-lado{
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 8px;
+    row-gap: 0;
+}
+
+.curriculo-titulo #nome-curriculo,
+.curriculo-titulo #sobrenome-curriculo{
+    width: auto;
+    max-width: 100%;
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e3a5f;
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+}
+
+.curriculo-titulo .esconder{
+    width: auto;
+    max-width: none;
+    margin-bottom: 0;
+}
+
+#curriculo .esconder{
+    visibility: hidden;
+}
+
+.curriculo-secao{
+    border-top: 2px solid #d6dce5;
+    padding-top: 15px;
+}
+
+.curriculo-secao h3{
+    color: #1e3a5f;
+    margin-bottom: 10px;
+}
+
+.curriculo-secao p{
+    width: auto;
+    max-width: none;
+    text-align: left;
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 6px;
 }
