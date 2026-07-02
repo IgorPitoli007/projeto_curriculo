@@ -27,12 +27,20 @@
 
                 <div class="curriculo-secao">
                     <h3>Contato</h3>
-                    <p>Tel: <span id="telefone-curriculo"></span></p>
-                    <p>Email: <span id="email-curriculo"></span></p>
+                    <p>Tel: <span id="telefone-curriculo"></span>.</p>
+                    <p>Email: <span id="email-curriculo"></span>.</p>
                     <h3>Endereço</h3>
-                    <p><span id="cidade-curriculo"></span> - <span id="estado-curriculo"></span></p>
-                    <p>CEP: <span id="cep-curriculo"></span></p>
-                    <p><span id="endereco-curriculo"></span></p>
+                    <p><span id="cidade-curriculo"></span> - <span id="estado-curriculo">.</span></p>
+                    <p>CEP: <span id="cep-curriculo"></span>.</p>
+                    <p><span id="endereco-curriculo"></span>.</p>
+                </div>
+                <div class="curriculo-secao">
+                    <h3>Objetivo</h3>
+                    <p><span id="objetivo-curriculo"></span>.</p>
+                </div>
+                <div class="curriculo-secao">
+                    <h3>Descrição Profissional</h3>
+                    <p><span id="descricao-curriculo"></span>.</p>
                 </div>
             </div>
             <div id="form">
@@ -121,6 +129,15 @@
                         </div>
                     </div>
                     <br>
+                    <div id="objetivo-div">
+                        <label for="objetivo">OBJETIVO:</label>
+                        <input type="text" id="objetivo" name="objetivo">
+                    </div>
+                    <div id="descricao-div">
+                        <label for="descricao">DESCRIÇÃO PROFISSIONAL:</label>
+                        <input type="text" id="descricao" name="descricao">
+                    </div>
+                    <br>
                     <div class="lado-a-lado botoes">
                         <a href="index.html" class="botao">Voltar</a>
                         <button type="submit">Criar Currículo</button>
@@ -151,19 +168,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="js/script.js"></script>
     <script>
-        function gerarPdf(){
+        function gerarPdf() {
+            const curriculo = document.getElementById('curriculo');
             const foto = document.getElementById('foto-curriculo');
+            const pai = curriculo.parentElement;
+
+            pai.style.display = "block";
+            curriculo.style.margin = "0 auto";
             const gerar = () => {
-                html2pdf(document.getElementById('curriculo'), {
-                    margin: 0,
-                    filename: 'curriculo.pdf',
-                    jsPDF: { format: 'a4' },
-                    html2canvas: {
-                        useCORS: true,
-                        allowTaint: true,
-                        scale: 2
-                    }
-                });
+                curriculo.classList.add('gerando-pdf');
+
+                html2pdf()
+                    .set({
+                        margin: 0,
+                        filename: 'curriculo.pdf',
+                        image: {
+                            type: 'jpeg',
+                            quality: 1
+                        },
+                        html2canvas: {
+                            scale: 2,
+                            useCORS: true,
+                            allowTaint: true
+                        },
+                        jsPDF: {
+                            unit: 'mm',
+                            format: 'a4',
+                            orientation: 'portrait'
+                        }
+                    })
+                    .from(curriculo)
+                    .save()
+                    .then(() => {
+                        pai.style.display = "flex";
+                        curriculo.classList.remove('gerando-pdf');
+                    });
             };
 
             if (foto.complete) {

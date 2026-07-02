@@ -7,6 +7,8 @@ const campos = [
     { input: 'cep-input', curriculo: 'cep-curriculo' },
     { input: 'telefone', curriculo: 'telefone-curriculo' },
     { input: 'email', curriculo: 'email-curriculo' },
+    { input: 'objetivo', curriculo: 'objetivo-curriculo' },
+    { input: 'descricao', curriculo: 'descricao-curriculo' },
 ];
 campos.forEach(({ input, curriculo }) => {
     const inputEl = document.getElementById(input);
@@ -17,7 +19,6 @@ campos.forEach(({ input, curriculo }) => {
         });
     }
 });
-// Foto: atualiza o preview do currículo quando o usuário escolhe um arquivo
 const fotoInput = document.getElementById('foto');
 const fotoCurriculo = document.getElementById('foto-curriculo');
 const fotoRosto = document.querySelector('#rosto img');
