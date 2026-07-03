@@ -11,6 +11,8 @@
         <nav>
             <a href="index.html"><img src="./icons/home.ico" alt="" width="24" height="24" class="icones">  Home</a>
             <a href="criar_curriculo.html"><img src="./icons/docs.ico" alt="" width="24" height="24" class="icones">  Criar currículo</a>
+            <a href="sign.html" id="sign"><img src="./icons/sign.ico" alt="" width="24" height="24" class="icones">Sign</a>
+            <a href="login.html" id="login"><img src="./icons/sign.ico" alt="" width="24" height="24" class="icones">login</a>
         </nav>
     </header>
 
@@ -202,6 +204,18 @@
             } else {
                 foto.onload = gerar;
             }
+        }
+    </script>
+    <script>
+        const sessao = JSON.parse(sessionStorage.getItem('sessao'));
+        const sign = document.getElementById('sign');
+        const login = document.getElementById('login');
+        if (sessao && sessao.logado) {
+            console.log('Usuário logado:', sessao.nickname);
+            console.log('Nome completo:', sessao.nome, sessao.sobrenome);
+            console.log('Email:', sessao.email);
+            sign.classList.add('esconder');
+            login.classList.add('esconder');
         }
     </script>
 </body>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign</title>
+    <link rel="stylesheet" href="css/criar_curriculo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="./icons/home.ico" alt="" width="24" height="24" class="icones">  Home</a>
+            <a href="criar_curriculo.html"><img src="./icons/docs.ico" alt="" width="24" height="24" class="icones">  Criar currículo</a>
+            <a href="sign.html" id="sign"><img src="./icons/sign.ico" alt="" width="24" height="24" class="icones">Sign</a>
+            <a href="login.html" id="login"><img src="./icons/sign.ico" alt="" width="24" height="24" class="icones">login</a>
+        </nav>
+    </header>
+    <div id="form">
+        <h1 class="centralizar">Criar conta</h1>
+        <form action="login.html" method="">
+            <div class="lado-a-lado">
+                <div id="dados_pessoas-div">
+                    <div class="lado-a-lado">
+                        <div id="nome">
+                            <label for="nome">NOME:</label>
+                            <br>
+                            <input type="text" name="nome" id="nome-input" required>
+                        </div>
+                        <div id="sobrenome">
+                            <label for="sobrenome">SOBRENOME:</label>
+                            <br>
+                            <input type="text" name="sobrenome" id="sobrenome-input" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="nickname">
+                        <label for="nickname-input">NICKNAME:</label>
+                        <br>
+                        <input type="text" name="nickname" id="nickname-input" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div id="contato" class="lado-a-lado">
+                <div class="contato-div">
+                    <label for="telefone">TELEFONE:</label>
+                    <br>
+                    <input type="text" id="telefone" name="telefone" class="contato-input" pattern="^\(?[1-9]{2}\)?\s?[0-9]{5}-?[0-9]{4}$" maxlength="15" required>
+                </div>
+                <div>
+                    <label for="email">EMAIL:</label>
+                    <br>
+                    <input type="email" id="email" name="email" class="contato-input" required>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div>
+                    <label for="senha">SENHA:</label>
+                    <br>
+                    <input type="senha" id="senha" name="senha" class="contato-input" required>
+                </div>
+            </div>
+            <br>
+            <div class="lado-a-lado botoes">
+                <a href="index.html" class="botao">Voltar</a>
+                <button type="submit">Criar Conta</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        const form = document.querySelector('form');
+        const telefoneInput = document.getElementById('telefone');
+
+        telefoneInput.addEventListener('keypress', (e) => {
+            if (isNaN(e.key)) {
+                e.preventDefault();
+            }
+        });
+        telefoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+            value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+            e.target.value = value;
+        });
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const novoUsuario = {
+                nome: document.getElementById('nome-input').value.trim(),
+                sobrenome: document.getElementById('sobrenome-input').value.trim(),
+                nickname: document.getElementById('nickname-input').value.trim(),
+                telefone: document.getElementById('telefone').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                senha: document.getElementById('senha').value
+            };
+            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+            const usuarioExistente = usuarios.find(
+                (u) => u.email === novoUsuario.email || u.nickname === novoUsuario.nickname
+            );
+            if (usuarioExistente) {
+                alert('Já existe um usuário cadastrado com esse email ou nickname.');
+                return;
+            }
+            usuarios.push(novoUsuario);
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+            alert('Conta criada com sucesso!');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

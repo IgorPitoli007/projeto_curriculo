@@ -155,3 +155,14 @@ footer p:last-child a:hover{
 .icones {
   filter: invert(100%);
 }
+#sign{
+    flex-grow: 1;
+    text-align: right;
+}
+#login{
+    padding: auto;
+    text-align: right;
+}
+.esconder{
+    visibility: hidden;
+}

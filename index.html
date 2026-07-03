@@ -12,6 +12,8 @@
             <nav>
                 <a href="index.html"><img src="./icons/home.ico" alt="" width="24" height="24" class="icones">  Home</a>
                 <a href="criar_curriculo.html"><img src="./icons/docs.ico" alt="" width="24" height="24" class="icones">  Criar currículo</a>
+                <a href="sign.html" id="sign"><img src="./icons/sign.ico" alt="" width="24" height="24" class="icones">Sign</a>
+                <a href="login.html" id="login"><img src="./icons/sign.ico" alt="" width="24" height="24" class="icones">login</a>
             </nav>
         </header>
         <h1>Bem-vindo ao Projeto Currículo</h1>
@@ -46,5 +48,17 @@
             <p>Projeto desenvolvido para a disciplina de Programação Web Front-end</p>
             <p><a href="https://www.linkedin.com/in/igor-rafael-pitoli-bbb43941b/">Igor Rafael Pitoli</a> - <a href="https://www.linkedin.com/in/eduardo-de-souza-oller-25468441b/">Eduardo de Souza Oller</a></p> 
         </footer>
+        <script>
+            const sessao = JSON.parse(sessionStorage.getItem('sessao'));
+            const sign = document.getElementById('sign');
+            const login = document.getElementById('login');
+            if (sessao && sessao.logado) {
+                console.log('Usuário logado:', sessao.nickname);
+                console.log('Nome completo:', sessao.nome, sessao.sobrenome);
+                console.log('Email:', sessao.email);
+                sign.classList.add('esconder');
+                login.classList.add('esconder');
+            }
+        </script>
     </body>
 </html>
